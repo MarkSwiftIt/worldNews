@@ -5,8 +5,11 @@
 //  Created by Mark Goncharov on 19.07.2022.
 //
 //
-import Foundation
+
 import UIKit
+
+
+//MARK: - TableViewCell ViewModel
 
 class NewsTableViewCellViewModel {
     
@@ -25,36 +28,42 @@ class NewsTableViewCellViewModel {
     }
 }
 
+//MARK: - TableViewCell
+
 class NewsTableViewCell: UITableViewCell {
 
     static let identifier = "NewsTableViewCell"
     
+//MARK: - Label and Image
+    
     private let newsTitleLable: UILabel = {
         
-        let l = UILabel()
-        l.numberOfLines = 0
-        l.font = .systemFont(ofSize: 22, weight: .semibold)
-        return l
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 22, weight: .semibold)
+        return label
     }()
     
     private let subTitleLable: UILabel = {
         
-        let l = UILabel()
-        l.numberOfLines = 0
-        l.font = .systemFont(ofSize: 17, weight: .light)
-        return l
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = .systemFont(ofSize: 17, weight: .light)
+        return label
     }()
     
     private let newsImageView: UIImageView = {
         
-        let l = UIImageView()
-        l.clipsToBounds = true
-        l.layer.cornerRadius = 6
-        l.layer.masksToBounds = true
-        l.backgroundColor = .secondarySystemBackground
-        l.contentMode = .scaleAspectFit
-        return l
+        let image = UIImageView()
+        image.clipsToBounds = true
+        image.layer.cornerRadius = 6
+        image.layer.masksToBounds = true
+        image.backgroundColor = .white
+        image.contentMode = .scaleAspectFit
+        return image
     }()
+    
+//MARK: - Init
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -67,6 +76,8 @@ class NewsTableViewCell: UITableViewCell {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+//MARK: - LayoutSubviews
     
     override func layoutSubviews() {
         super.layoutSubviews()
@@ -87,6 +98,8 @@ class NewsTableViewCell: UITableViewCell {
                                      height: contentView.frame.size.height - 10)
     }
     
+//MARK: - Prepare
+    
     override func prepareForReuse() {
         super.prepareForReuse()
         
@@ -94,6 +107,8 @@ class NewsTableViewCell: UITableViewCell {
         subTitleLable.text = nil
         newsImageView.image = nil
     }
+    
+//MARK: -Configure
     
     func configure(with viewModel: NewsTableViewCellViewModel) {
         

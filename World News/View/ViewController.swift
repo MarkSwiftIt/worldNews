@@ -8,20 +8,24 @@
 import UIKit
 import SafariServices
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchBarDelegate {
 
+class ViewController: UIViewController {
     
-    private let tableView: UITableView = {
-        let t = UITableView()
-        t.register(NewsTableViewCell.self, forCellReuseIdentifier: NewsTableViewCell.identifier)
-        return t
-    }()
-
     private var articles = [Articles]()
     private var viewModels = [NewsTableViewCellViewModel]()
 
     private let searchVC = UISearchController(searchResultsController: nil)
     
+//MARK: - TableView
+    
+    private let tableView: UITableView = {
+        
+        let table = UITableView()
+        table.register(NewsTableViewCell.self, forCellReuseIdentifier: NewsTableViewCell.identifier)
+        return table
+    }()
+    
+//MARK: - Life
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,13 +39,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         fetchTopNews()
         createSearchBar()
     }
-        override func viewDidLayoutSubviews() {
-            super.viewDidLayoutSubviews()
-            
-            tableView.frame = view.bounds
-        }
-        
     
+//MARK: - LayoutSubviews
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+            
+        tableView.frame = view.bounds
+    }
+        
 //MARK: - Network
     
     private func fetchTopNews() {
@@ -64,7 +70,12 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
-
+}
+    
+//MARK:  - SearchBar Delegate
+     
+extension ViewController: UISearchBarDelegate {
+    
     private func createSearchBar() {
         
         navigationItem.searchController = searchVC
@@ -95,9 +106,11 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             }
         }
     }
-
+}
     
 //MARK: - TableView DataSource, Delegate
+    
+extension ViewController:  UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -127,9 +140,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
         return 150
     }
-
 }
 

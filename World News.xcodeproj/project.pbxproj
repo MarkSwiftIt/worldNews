@@ -10,9 +10,12 @@
 		772930F128871FB1002208DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772930F028871FB1002208DC /* AppDelegate.swift */; };
 		772930F328871FB1002208DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772930F228871FB1002208DC /* SceneDelegate.swift */; };
 		772930F528871FB1002208DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772930F428871FB1002208DC /* ViewController.swift */; };
-		772930F828871FB1002208DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772930F628871FB1002208DC /* Main.storyboard */; };
 		772930FA28871FB1002208DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 772930F928871FB1002208DC /* Assets.xcassets */; };
 		772930FD28871FB1002208DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 772930FB28871FB1002208DC /* LaunchScreen.storyboard */; };
+		7729310928872301002208DC /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7729310828872301002208DC /* APIKey.swift */; };
+		7729310C28872409002208DC /* ModelApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7729310B28872409002208DC /* ModelApi.swift */; };
+		7729310E288725AE002208DC /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7729310D288725AE002208DC /* NetworkService.swift */; };
+		772931132887322E002208DC /* NewsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 772931122887322E002208DC /* NewsTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,10 +23,13 @@
 		772930F028871FB1002208DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		772930F228871FB1002208DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		772930F428871FB1002208DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		772930F728871FB1002208DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		772930F928871FB1002208DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		772930FC28871FB1002208DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		772930FE28871FB1002208DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7729310828872301002208DC /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
+		7729310B28872409002208DC /* ModelApi.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelApi.swift; sourceTree = "<group>"; };
+		7729310D288725AE002208DC /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		772931122887322E002208DC /* NewsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +62,74 @@
 		772930EF28871FB1002208DC /* World News */ = {
 			isa = PBXGroup;
 			children = (
-				772930F028871FB1002208DC /* AppDelegate.swift */,
-				772930F228871FB1002208DC /* SceneDelegate.swift */,
-				772930F428871FB1002208DC /* ViewController.swift */,
-				772930F628871FB1002208DC /* Main.storyboard */,
-				772930F928871FB1002208DC /* Assets.xcassets */,
-				772930FB28871FB1002208DC /* LaunchScreen.storyboard */,
+				772931052887227D002208DC /* App and Scene */,
+				7729310F28872E36002208DC /* NewsTable */,
+				7729310428872269002208DC /* Service */,
+				77AF941E28881ECF00C45A3F /* View */,
+				7729310A288723F7002208DC /* Model */,
+				77293107288722EB002208DC /* Confiig */,
+				7729310628872298002208DC /* Resourses */,
 				772930FE28871FB1002208DC /* Info.plist */,
 			);
 			path = "World News";
+			sourceTree = "<group>";
+		};
+		7729310428872269002208DC /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				7729310D288725AE002208DC /* NetworkService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		772931052887227D002208DC /* App and Scene */ = {
+			isa = PBXGroup;
+			children = (
+				772930F028871FB1002208DC /* AppDelegate.swift */,
+				772930F228871FB1002208DC /* SceneDelegate.swift */,
+			);
+			path = "App and Scene";
+			sourceTree = "<group>";
+		};
+		7729310628872298002208DC /* Resourses */ = {
+			isa = PBXGroup;
+			children = (
+				772930F928871FB1002208DC /* Assets.xcassets */,
+				772930FB28871FB1002208DC /* LaunchScreen.storyboard */,
+			);
+			path = Resourses;
+			sourceTree = "<group>";
+		};
+		77293107288722EB002208DC /* Confiig */ = {
+			isa = PBXGroup;
+			children = (
+				7729310828872301002208DC /* APIKey.swift */,
+			);
+			path = Confiig;
+			sourceTree = "<group>";
+		};
+		7729310A288723F7002208DC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7729310B28872409002208DC /* ModelApi.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7729310F28872E36002208DC /* NewsTable */ = {
+			isa = PBXGroup;
+			children = (
+				772931122887322E002208DC /* NewsTableViewCell.swift */,
+			);
+			path = NewsTable;
+			sourceTree = "<group>";
+		};
+		77AF941E28881ECF00C45A3F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				772930F428871FB1002208DC /* ViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +192,6 @@
 			files = (
 				772930FD28871FB1002208DC /* LaunchScreen.storyboard in Resources */,
 				772930FA28871FB1002208DC /* Assets.xcassets in Resources */,
-				772930F828871FB1002208DC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,21 +204,17 @@
 			files = (
 				772930F528871FB1002208DC /* ViewController.swift in Sources */,
 				772930F128871FB1002208DC /* AppDelegate.swift in Sources */,
+				7729310928872301002208DC /* APIKey.swift in Sources */,
+				7729310C28872409002208DC /* ModelApi.swift in Sources */,
+				7729310E288725AE002208DC /* NetworkService.swift in Sources */,
 				772930F328871FB1002208DC /* SceneDelegate.swift in Sources */,
+				772931132887322E002208DC /* NewsTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		772930F628871FB1002208DC /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				772930F728871FB1002208DC /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		772930FB28871FB1002208DC /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +352,6 @@
 				INFOPLIST_FILE = "World News/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -320,7 +379,6 @@
 				INFOPLIST_FILE = "World News/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
